@@ -42,9 +42,6 @@ allprojects {
         entry "finagle-thrift_$scalaVersion"
       }
 
-      //Logging
-      dependency group: "ch.qos.logback", name: "logback-classic", version: "1.0.13"
-
       //Finatra
       ext.finatraVersion = twitterLibVersion
       dependencySet(group: 'com.twitter', version: finatraVersion) {
