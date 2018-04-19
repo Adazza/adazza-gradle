@@ -65,6 +65,7 @@ configure(subprojects.findAll { it.name.endsWith('-server') }) {
     compile group: 'com.adazza.common', name: "common-utils_$scalaVersion"
 
     compile "ch.qos.logback:logback-classic"
+    compile "ch.qos.logback:logback-core"
 
     testCompile group: 'org.scalatest', name: "scalatest_$scalaVersion"
     testCompile 'junit:junit'
