@@ -64,7 +64,7 @@ configure(subprojects.findAll { it.name.endsWith('-server') }) {
     compile group: 'com.adazza.common', name: "common-api_$scalaVersion"
     compile group: 'com.adazza.common', name: "common-utils_$scalaVersion"
 
-    compile "com.twitter:twitter-server-logback-classi_$scalaVersion"
+    compile "com.twitter:twitter-server-logback-classic_$scalaVersion"
     compile "ch.qos.logback:logback-classic"
     compile "ch.qos.logback:logback-core"
 
