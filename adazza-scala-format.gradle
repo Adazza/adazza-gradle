@@ -2,12 +2,11 @@ buildscript {
   repositories {
     maven {
       url "https://plugins.gradle.org/m2/"
-      mavenCentral()
     }
+    mavenCentral()
   }
   dependencies {
     classpath "com.diffplug.spotless:spotless-plugin-gradle:3.13.0"
-    classpath "com.geirsson:scalafmt-core_${scalaVersion}:1.5.0"
   }
 }
 
