@@ -7,6 +7,7 @@ buildscript {
   }
   dependencies {
     classpath "com.diffplug.spotless:spotless-plugin-gradle:3.13.0"
+    classpath "com.geirsson:scalafmt-core_${scalaVersion}:1.5.0"
   }
 }
 
