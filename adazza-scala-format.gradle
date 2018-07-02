@@ -17,9 +17,11 @@ subprojects {
   apply from: "https://raw.githubusercontent.com/adazza/adazza-gradle/${gradleBranch}/adazza-scala.gradle"
   spotless {
     scala {
-      scalafmt('1.5.0')
+      if (new File(rootDir, ".scalafmt.conf").exists()) {
+        scalafmt('1.5.0').configFile('.scalafmt.conf')
+      } else {
+        scalafmt('1.5.0')
+      }
     }
   }
 }
-
-
