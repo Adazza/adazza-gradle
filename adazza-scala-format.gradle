@@ -28,10 +28,14 @@ subprojects {
     scala {
       def scalafmtVersion = '1.5.0'
       def scalafmtConfig = new File(rootDir, ".scalafmt.conf")
+      def globaConfig = new File(rootDir, ".scalafmt.conf")
+
       if (scalafmtConfig.exists()) {
+        scalafmt(scalafmtVersion).configFile(globaConfig.getAbsolutePath())
+      } else if(globaConfig.exists()) {
         scalafmt(scalafmtVersion).configFile(scalafmtConfig.getAbsolutePath())
       } else {
-        scalafmt(scalafmtVersion)
+         throw new GradleException("Unable to find scala format configuration.")
       }
     }
   }
