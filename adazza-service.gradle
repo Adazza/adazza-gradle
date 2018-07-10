@@ -6,7 +6,7 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.netflix.nebula:gradle-ospackage-plugin:4.4.2'
+    classpath 'com.netflix.nebula:gradle-ospackage-plugin:4.9.3'
   }
 }
 // If your root project is foo-service the name is foo.

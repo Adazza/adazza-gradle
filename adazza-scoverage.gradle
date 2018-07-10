@@ -5,7 +5,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.org.scoverage:gradle-scoverage:2.1.0"
+    classpath "gradle.plugin.org.scoverage:gradle-scoverage:2.3.0"
   }
 }
 
