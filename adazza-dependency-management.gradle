@@ -15,8 +15,7 @@ allprojects {
       mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.271'
     }
     dependencies {
-      dependency group: 'com.gu', name: "scanamo_$scalaVersion", version: '0.9.5'
-      dependency group: 'com.gu', name: "scanamo-scrooge_$scalaVersion", version: '0.1.6-adazza'
+      dependency group: 'com.gu', name: "scanamo_$scalaVersion", version: '1.0.0-M6'
 
 
       dependency group: 'com.twitter', name: "bijection-core_$scalaVersion", version: '0.9.6'
@@ -87,8 +86,6 @@ allprojects {
       dependency group: 'org.apache.avro', name: 'avro', version: "$avroVersion"
 
       dependency group: 'com.github.seratch', name: "awscala_$scalaVersion", version: '0.5.9'
-
-      dependency group: 'org.scalaz', name: "scalaz-core_$scalaVersion", version: '7.2.9'
 
       dependency group: 'com.amazonaws', name: 'DynamoDBLocal', version: '1.11.86'
 
