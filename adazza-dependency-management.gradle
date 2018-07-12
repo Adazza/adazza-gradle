@@ -12,7 +12,7 @@ allprojects {
 
   dependencyManagement {
     imports {
-      mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.271'
+      mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.366'
     }
     dependencies {
       dependency group: 'com.gu', name: "scanamo_$scalaVersion", version: '1.0.0-M6'
@@ -20,7 +20,7 @@ allprojects {
 
       dependency group: 'com.twitter', name: "bijection-core_$scalaVersion", version: '0.9.6'
 
-      ext.twitterLibVersion='18.2.0'
+      ext.twitterLibVersion='18.7.0'
       dependencySet(group: 'com.twitter', version: twitterLibVersion) {
         entry "scrooge-core_$scalaVersion"
         entry "scrooge-generator_$scalaVersion"
@@ -84,8 +84,6 @@ allprojects {
 
       ext.avroVersion = '1.8.2'
       dependency group: 'org.apache.avro', name: 'avro', version: "$avroVersion"
-
-      dependency group: 'com.github.seratch', name: "awscala_$scalaVersion", version: '0.5.9'
 
       dependency group: 'com.amazonaws', name: 'DynamoDBLocal', version: '1.11.86'
 
