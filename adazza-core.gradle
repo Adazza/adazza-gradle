@@ -42,6 +42,8 @@ allprojects {
   publishing {
     publications {
       nebula(MavenPublication) {
+        //https://docs.gradle.org/4.8.1/userguide/publishing_maven.html#publishing_maven:deferred_configuration
+        //to upgrade to 5.0
         // Include scala version in the artifactId when publishing adazza libraries
         artifactId("${project.getName()}_$scalaVersion")
       }
