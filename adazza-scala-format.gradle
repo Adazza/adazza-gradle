@@ -28,7 +28,9 @@ subprojects {
     scala {
       target project.fileTree(project.rootDir) {
         include '**/*.scala'
-        exclude 'build/generated-sources/**/*.*'
+        exclude '**/build/**/*.*'
+        exclude '**/generated-sources/**/*.*'
+        exclude '**/swagger/**/*.*'
       }
       def scalafmtVersion = '1.5.0'
       def scalafmtConfig = new File(rootDir, ".scalafmt.conf")
