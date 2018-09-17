@@ -9,16 +9,14 @@ buildscript {
     //Allows us to download the adazza scrooge plugin.
     maven {
       url "s3://adazza-maven-repo/release"
-      credentials(AwsCredentials) {
-        accessKey System.env.AWS_ACCESS_KEY_ID
-        secretKey System.env.AWS_SECRET_ACCESS_KEY
+      authentication {
+          awsIm(AwsImAuthentication) // load from EC2 role or env var
       }
     }
     maven {
       url "s3://adazza-maven-repo/snapshot"
-      credentials(AwsCredentials) {
-        accessKey System.env.AWS_ACCESS_KEY_ID
-        secretKey System.env.AWS_SECRET_ACCESS_KEY
+      authentication {
+          awsIm(AwsImAuthentication) // load from EC2 role or env var
       }
     }
   }
