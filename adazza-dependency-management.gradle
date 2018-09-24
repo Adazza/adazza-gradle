@@ -17,7 +17,6 @@ allprojects {
     dependencies {
       dependency group: 'com.gu', name: "scanamo_$scalaVersion", version: '1.0.0-M6'
 
-
       dependency group: 'com.twitter', name: "bijection-core_$scalaVersion", version: '0.9.6'
 
       ext.twitterLibVersion='18.7.0'
@@ -65,6 +64,19 @@ allprojects {
         entry "common-finatra_$scalaVersion"
         entry "common-api_$scalaVersion"
       }
+
+      //Slick
+      dependencySet(group: 'com.typesafe.slick', version: '3.2.3') {
+        entry "slick_$scalaVersion"
+        entry "slick-hikaricp_$scalaVersion"
+      }
+
+      dependency group: 'io.github.nafg', name: "slick-migration-api_$scalaVersion", version: '0.4.2'
+      dependency group: 'com.liyaos', name: "scala-forklift-slick_$scalaVersion", version: '0.3.1'
+
+      //Postgres
+      dependency group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
+      dependency group: 'com.github.tminglei', name: 'slick-pg', version: '0.16.3'
 
       //Spark
       ext.sparkVersion = '2.2.0'
