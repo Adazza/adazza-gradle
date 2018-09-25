@@ -71,12 +71,14 @@ allprojects {
         entry "slick-hikaricp_$scalaVersion"
       }
 
-      dependency group: 'io.github.nafg', name: "slick-migration-api_$scalaVersion", version: '0.4.2'
-      dependency group: 'com.liyaos', name: "scala-forklift-slick_$scalaVersion", version: '0.3.1'
-
       //Postgres
       dependency group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
+
+      //Postgres slick integration
       dependency group: 'com.github.tminglei', name: 'slick-pg', version: '0.16.3'
+
+      //flyway - db migration tool
+      dependency group: 'org.flywaydb', name: 'flyway-core', version: '5.1.4'
 
       //Spark
       ext.sparkVersion = '2.2.0'
