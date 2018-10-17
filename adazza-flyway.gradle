@@ -1,0 +1,26 @@
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "org.postgresql:postgresql"
+    classpath "gradle.plugin.com.boxfuse.client:gradle-plugin-publishing:5.2.0"
+  }
+}
+
+
+apply plugin: org.flywaydb.gradle.FlywayPlugin
+
+flyway {
+  url = "jdbc:postgresql://${migrationHost}:5432/postgres"
+  user = "${migrationUser}"
+  password = "${migrationPassword}"
+  schemas = ["${migrationSchema}"]
+  locations = ["classpath:/migrations"]
+  placeholders = [
+      'schema': "${migrationSchema}"
+  ]
+  configurations = ['compile', 'runtime']
+}
