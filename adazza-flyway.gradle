@@ -10,17 +10,20 @@ buildscript {
   }
 }
 
+if (project.hasProperty("migrationHost")) {
+  configure(subprojects.findAll { it.name.endsWith('-server') }) {
+    apply plugin: org.flywaydb.gradle.FlywayPlugin
 
-apply plugin: org.flywaydb.gradle.FlywayPlugin
-
-flyway {
-  url = "jdbc:postgresql://${migrationHost}:5432/postgres"
-  user = "${migrationUser}"
-  password = "${migrationPassword}"
-  schemas = ["${migrationSchema}"]
-  locations = ["classpath:/migrations"]
-  placeholders = [
-      'schema': "${migrationSchema}"
-  ]
-  configurations = ['compile', 'runtime']
+    flyway {
+      url = "jdbc:postgresql://${migrationHost}:5432/service_db_stage"
+      user = migrationUser
+      password = migrationPassword
+      schemas = [migrationSchema]
+      locations = ["classpath:/migrations"]
+      placeholders = [
+          'schema': migrationSchema
+      ]
+      configurations = ['compile', 'runtime']
+    }
+  }
 }
