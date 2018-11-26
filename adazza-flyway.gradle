@@ -5,7 +5,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "org.postgresql:postgresql"
+    classpath "org.postgresql:postgresql:42.2.5"
     classpath "gradle.plugin.com.boxfuse.client:gradle-plugin-publishing:5.2.0"
   }
 }
