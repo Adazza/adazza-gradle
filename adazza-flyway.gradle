@@ -15,7 +15,7 @@ if (project.hasProperty("migrationHost")) {
     apply plugin: org.flywaydb.gradle.FlywayPlugin
 
     flyway {
-      url = "jdbc:postgresql://${migrationHost}:5432/service_db_stage"
+      url = "jdbc:postgresql://${migrationHost}:5432/${migrationDB}"
       user = migrationUser
       password = migrationPassword
       schemas = [migrationSchema]
