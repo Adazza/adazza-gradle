@@ -10,7 +10,7 @@ buildscript {
   }
 }
 // If your root project is foo-service the name is foo.
-// The submodules for your service will then be foo-api, 
+// The submodules for your service will then be foo-api,
 // foo-server, foo-client.
 def serviceName = rootProject.name.replace('-service', '')
 
@@ -56,7 +56,8 @@ configure(subprojects.findAll { it.name.endsWith('-server') }) {
 
     compile "com.twitter:finatra-thrift_$scalaVersion"
     compile "com.twitter:inject-slf4j_$scalaVersion"
-
+    compile "com.twitter:inject-request-scope_$scalaVersion:$finatraVersion"
+        
     compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb'
 
     compile group: 'com.adazza.common', name: "common-finagle_$scalaVersion"
