@@ -82,7 +82,7 @@ allprojects {
       dependency group: 'org.flywaydb', name: 'flyway-core', version: '5.1.4'
 
       //Spark
-      ext.sparkVersion = '2.2.0'
+      ext.sparkVersion = '2.4.0'
       dependencySet(group: 'org.apache.spark', version: sparkVersion) {
         entry 'spark-core_2.11'
         entry 'spark-sql_2.11'
