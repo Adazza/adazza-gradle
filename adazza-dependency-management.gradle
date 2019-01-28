@@ -57,7 +57,7 @@ allprojects {
         entry "inject-inject-utils_$scalaVersion"
       }
 
-      compile 'com.rollbar:rollbar-java:1.+'
+      dependency 'com.rollbar:rollbar-java:1.+'
 
       dependencySet(group: 'com.adazza.common', version: '1.+') {
         entry "common-testing_$scalaVersion"
