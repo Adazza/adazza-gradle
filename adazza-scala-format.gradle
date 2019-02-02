@@ -1,48 +1,10 @@
-buildscript {
-  repositories {
-    mavenCentral()
-    maven {
-      url "https://plugins.gradle.org/m2/"
-    }
-  }
-  dependencies {
-    classpath "com.diffplug.spotless:spotless-plugin-gradle:3.13.0"
-  }
-}
-
-allprojects {
-  buildscript {
-    repositories {
-      mavenCentral()
-      maven {
-        url "https://plugins.gradle.org/m2/"
-      }
-    }
-  }
-  apply plugin: com.diffplug.gradle.spotless.SpotlessPlugin
-}
 
 subprojects {
-  apply from: "https://raw.githubusercontent.com/adazza/adazza-gradle/${gradleBranch}/adazza-scala.gradle"
-  spotless {
-    scala {
-      target project.fileTree(project.rootDir) {
-        include '**/*.scala'
-        exclude '**/build/**/*.*'
-        exclude '**/generated-sources/**/*.*'
-        exclude '**/swagger/**/*.*'
-      }
-      def scalafmtVersion = '1.5.0'
-      def scalafmtConfig = new File(rootDir, ".scalafmt.conf")
-      def globaConfig = new File(rootDir, ".scalafmt.conf")
+  task codeformatCheck(type:Exec) {
+    commandLine "../scalafmt", "--test", "."
+  }
 
-      if (scalafmtConfig.exists()) {
-        scalafmt(scalafmtVersion).configFile(globaConfig.getAbsolutePath())
-      } else if(globaConfig.exists()) {
-        scalafmt(scalafmtVersion).configFile(scalafmtConfig.getAbsolutePath())
-      } else {
-         throw new GradleException("Unable to find scala format configuration.")
-      }
-    }
+  task codeformatFix(type:Exec) {
+    commandLine "../scalafmt", "."
   }
 }
