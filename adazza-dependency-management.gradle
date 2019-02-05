@@ -118,7 +118,7 @@ allprojects {
       dependency group: 'com.amazonaws', name: 'DynamoDBLocal', version: '1.11.86'
       dependency group: 'com.twitter', name: "storehaus-testing_$scalaVersion", version: '0.16.0.adazza'
 
-      ext.jacksonVersion = '2.8.4'
+      ext.jacksonVersion = '2.9.6'
       dependencySet(group: 'com.fasterxml.jackson.core', version: jacksonVersion) {
         entry 'jackson-databind'
         entry 'jackson-core'
