@@ -28,14 +28,11 @@ allprojects {
       }
 
       //Logging
-
       ext.logbackVersion ='1.2.3'
       dependency group: "com.twitter", name: "twitter-server-logback-classic_$scalaVersion", version: twitterLibVersion
       dependency group: 'ch.qos.logback', name: 'logback-classic', version: logbackVersion
       dependency group: 'ch.qos.logback', name: 'logback-core', version: logbackVersion
 
-      //This version is linked to the version used by finagle.
-      //If you change the finagle version you likely need to change this also.
       dependencySet(group: 'com.twitter', version: twitterLibVersion) {
         entry "util-core_$scalaVersion"
       }
