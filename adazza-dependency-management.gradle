@@ -19,23 +19,18 @@ allprojects {
       dependency 'com.google.guava:guava:27.0.1-jre'
       dependency group: 'com.gu', name: "scanamo_$scalaVersion", version: '1.0.0-M6'
 
-      dependency group: 'com.twitter', name: "bijection-core_$scalaVersion", version: '0.9.6'
-
-      ext.twitterLibVersion='18.7.0'
+      ext.twitterLibVersion='19.1.0'
       dependencySet(group: 'com.twitter', version: twitterLibVersion) {
         entry "scrooge-core_$scalaVersion"
         entry "scrooge-generator_$scalaVersion"
       }
 
       //Logging
-
       ext.logbackVersion ='1.2.3'
       dependency group: "com.twitter", name: "twitter-server-logback-classic_$scalaVersion", version: twitterLibVersion
       dependency group: 'ch.qos.logback', name: 'logback-classic', version: logbackVersion
       dependency group: 'ch.qos.logback', name: 'logback-core', version: logbackVersion
 
-      //This version is linked to the version used by finagle.
-      //If you change the finagle version you likely need to change this also.
       dependencySet(group: 'com.twitter', version: twitterLibVersion) {
         entry "util-core_$scalaVersion"
       }
@@ -61,7 +56,7 @@ allprojects {
 
       dependency 'com.rollbar:rollbar-java:1.+'
 
-      dependencySet(group: 'com.adazza.common', version: '1.+') {
+      dependencySet(group: 'com.adazza.common', version: '19.1.+') {
         entry "common-testing_$scalaVersion"
         entry "common-utils_$scalaVersion"
         entry "common-finagle_$scalaVersion"
@@ -78,9 +73,6 @@ allprojects {
 
       //Postgres
       dependency group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
-
-      //Postgres slick integration
-      dependency group: 'com.github.tminglei', name: 'slick-pg', version: '0.16.3'
 
       //flyway - db migration tool
       dependency group: 'org.flywaydb', name: 'flyway-core', version: '5.1.4'
@@ -118,7 +110,7 @@ allprojects {
       dependency group: 'com.amazonaws', name: 'DynamoDBLocal', version: '1.11.86'
       dependency group: 'com.twitter', name: "storehaus-testing_$scalaVersion", version: '0.16.0.adazza'
 
-      ext.jacksonVersion = '2.8.4'
+      ext.jacksonVersion = '2.9.6'
       dependencySet(group: 'com.fasterxml.jackson.core', version: jacksonVersion) {
         entry 'jackson-databind'
         entry 'jackson-core'
