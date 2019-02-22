@@ -115,7 +115,12 @@ allprojects {
         entry 'jackson-databind'
         entry 'jackson-core'
         entry 'jackson-annotations'
+        entry 'jackson-module-paranamer'
+        entry "jackson-module-scala_$scalaVersion"
+        entry "jackson-datatype-jsr310"
+        entry "jackson-datatype-jdk8"
       }
+
       dependencySet(group: 'com.fasterxml.jackson.module', version: jacksonVersion) {
         entry 'jackson-module-paranamer'
         entry "jackson-module-scala_$scalaVersion"
