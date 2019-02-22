@@ -12,7 +12,7 @@ allprojects {
 
   dependencyManagement {
     imports {
-      mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.442'
+      mavenBom 'com.amazonaws:aws-java-sdk-bom:2.4.14'
     }
     dependencies {
 
@@ -107,7 +107,6 @@ allprojects {
       }
 
       dependency group: "com.google.inject.extensions", name: "guice-testlib", version: "4.1.0"
-      dependency group: 'com.amazonaws', name: 'DynamoDBLocal', version: '1.11.86'
       dependency group: 'com.twitter', name: "storehaus-testing_$scalaVersion", version: '0.16.0.adazza'
 
       ext.jacksonVersion = '2.9.6'
