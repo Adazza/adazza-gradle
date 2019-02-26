@@ -67,7 +67,7 @@ allprojects {
       }
 
       //Slick
-      dependencySet(group: 'com.typesafe.slick', version: '3.2.3') {
+      dependencySet(group: 'com.typesafe.slick', version: '3.3.0') {
         entry "slick_$scalaVersion"
         entry "slick-hikaricp_$scalaVersion"
       }
@@ -126,6 +126,7 @@ allprojects {
         entry 'jackson-module-paranamer'
         entry "jackson-module-scala_$scalaVersion"
       }
+
     }
   }
 }
