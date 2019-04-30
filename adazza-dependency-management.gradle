@@ -57,7 +57,7 @@ allprojects {
 
       dependency 'com.rollbar:rollbar-java:1.+'
 
-      dependencySet(group: 'com.adazza.common', version: '19.1.+') {
+      dependencySet(group: 'com.adazza.common', version: '19.4.+') {
         entry "common-testing_$scalaVersion"
         entry "common-utils_$scalaVersion"
         entry "common-finagle_$scalaVersion"
