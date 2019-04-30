@@ -19,7 +19,7 @@ allprojects {
       dependency 'com.google.guava:guava:27.0.1-jre'
       dependency group: 'com.gu', name: "scanamo_$scalaVersion", version: '1.0.0-M6'
 
-      ext.twitterLibVersion='19.1.0'
+      ext.twitterLibVersion='19.4.0'
       dependencySet(group: 'com.twitter', version: twitterLibVersion) {
         entry "scrooge-core_$scalaVersion"
         entry "scrooge-generator_$scalaVersion"
